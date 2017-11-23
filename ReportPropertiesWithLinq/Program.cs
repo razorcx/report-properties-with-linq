@@ -1,15 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace ReportPropertiesWithLinq
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
+			try
+			{
+				new ReportPropertiesWithLinqExample().Run();
+			}
+			catch (Exception ex)
+			{
+				Trace.WriteLine(ex.InnerException + ex.Message + ex.StackTrace);
+			}
 		}
 	}
 }
